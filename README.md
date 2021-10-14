@@ -12,7 +12,7 @@ Using techniques from data science and scientific computing, we are able to quan
 We are able to create a simple visualization that observed two different clusters representing the two chambers for the polarity in the voting systems; in the process of such visualization, we first need to construct a social network from the datasets and deploy a simple natural language processing model to extract the data from a tweet. The project will be mostly done on a jupyter notebook.
 
 # Resources Required
-First, we will request the dataset from the authors in the following paper: [Political Discourse on Social Media: Echo Chambers, Gatekeepers, and the Price of Bipartisanship (arxiv.org)](https://arxiv.org/pdf/1801.01665.pdf) This papers consider 10 datasets ranging from tweets about gun control to tweets about Game of throne discussions.
+We have gotten the dataset from the authors in the following paper: [Political Discourse on Social Media: Echo Chambers, Gatekeepers, and the Price of Bipartisanship (arxiv.org)](https://arxiv.org/pdf/1801.01665.pdf) This papers consider 10 datasets ranging from tweets about gun control to tweets about Game of throne discussions.
 
 # Tools and Skills Required
 - Complex visualizations based on Python modules such as Matplotlib and Seaborn
