@@ -9,3 +9,6 @@ domains_ideology_score_LADA.txt
 .ipynb_checkpoints/Project Notebook-checkpoint.ipynb
 obamacare/.DS_Store
 .DS_Store
+obamacare/FULL_FOLLOWER_NETWORK.txt.gz
+obamacare/USER_TWEETS.txt.gz
+.ipynb_checkpoints/Tweets-DataCleaning-checkpoint.ipynb
