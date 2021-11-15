@@ -12,3 +12,5 @@ obamacare/.DS_Store
 obamacare/FULL_FOLLOWER_NETWORK.txt.gz
 obamacare/USER_TWEETS.txt.gz
 .ipynb_checkpoints/Tweets-DataCleaning-checkpoint.ipynb
+obama.db
+.ipynb_checkpoints/Network-DataCleaning-checkpoint.ipynb
