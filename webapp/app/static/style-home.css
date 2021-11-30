@@ -1,0 +1,77 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #60a9ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+
+#home {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px 25px;
+    width: 100%;
+    max-width: 960px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#home div {
+    border: 1px solid #9dd1ff;
+    border-radius: 10px;
+    display: inline-block;
+    width: 30px;
+    padding: 15px 30px;
+    margin: 10px 0;
+}
+
+#home a {
+   text-decoration: none;
+}
+
+#home a:hover, #home a:focus {
+    transition: background-color 200ms ease-in-out;
+}
+
+.tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+}
+
+
+
+#home-yes a {
+    color: #348efe;
+}
+#home-yes:hover, #home-yes:focus {
+    background-color: #e1f1ff;
+}
+#home-yes:hover .tooltiptext {
+  visibility: visible;
+}
+
+
+#home-no {
+    background-color: #48aaff;
+}
+#home-no a {
+  color: white;
+}
+#home-no:hover, #home-no:focus {
+    background-color: #269aff;
+}
+#home-no:hover .tooltiptext {
+  visibility: visible;
+}

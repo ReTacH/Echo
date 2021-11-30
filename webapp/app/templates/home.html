@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="{{ url_for('static', filename='style-home.css') }}">
+	<title>Echo Chamber</title>
+</head>
+<body>
+	<section id="home">
+		<h1>You are only hearing what you want to hear.</h1>
+		<p>Have your heard about Echo Chamber?</p>
+
+		<div id="home-no">
+			<a href="{{ url_for('about') }}">No</a>
+			<span class="tooltiptext">Let's learn about this!</span>
+		</div>
+
+		<div id="home-yes">
+			<a href="{{ url_for('more') }}">Yes</a>
+			<span class="tooltiptext">Read about what we found!</span>
+		</div>
+	</section>
+</body>
+</html>

@@ -1,0 +1,51 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #60a9ff;
+  display: flex;
+  min-height: 100vh;
+}
+
+nav {
+  padding: 0 30px;
+  font-size: 1.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+ul,
+li {
+  display: block;
+  padding: 5px 0;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+  color: #cce4ff;
+}
+
+a:hover {
+  color: white;
+}
+
+
+.content {
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px 25px;
+  width: 100%;
+  max-width: 960px;
+
+  display: block;
+}
+
+.citation {
+  font-size: 0.5em;
+  color: grey;
+}
+
+h3 {
+  margin-top: 50px;
+}
