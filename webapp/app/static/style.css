@@ -49,3 +49,7 @@ a:hover {
 h3 {
   margin-top: 50px;
 }
+
+div.container {
+  display:inline-block;
+}

@@ -21,3 +21,6 @@ def more():
     # msg = random_messages(5)
     return render_template("more.html")
 
+@app.route("/method/")
+def method():
+    return render_template("method.html")

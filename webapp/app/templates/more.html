@@ -4,22 +4,24 @@
 {% block content %}
   <!-- clusterings based on polarity scores -->
 
-  <h2>Here is what we've found out about Echo Chamber: </h2>
-  <p>We asked the author of [1] for the dataset they used, and produced our own production scores and consumption scores after filtering the tweets with known user data and with quoted domains. </p>
-  <p>We then checked the clusterings of the polarity scores we produced using the three types of graphs below: </p>
+  <h2>Here is what we've found out about Echo Chamber in Twitter: </h2>
+
+  <h3>Current Findings</h3>
+  <p>According to the research <span style="font-style: italic">Political Discourse on Social Media: Echo Chambers, Gatekeepers, and the Price of Bipartisanship.</span>, political echo chambers exist. In particular, the distribution of production and consumption polarities of users is clearly bi-modal, and the production and consumption polarities are highly correlated.[1]</p>
+  <p></p>
   <h3>Agglomerative Clustering</h3>
-  {% include 'agglomerative.html' %}
+  <center>{% include 'agglomerative.html' %}</center>
   <h3>Spectral Clustering</h3>
-  {% include 'spectral.html' %}
+  <center>{% include 'spectral.html' %}</center>
   <h3>Heatmap</h3>
-  {% include 'heatmap.html' %}
+  <center>{% include 'heatmap.html' %}</center>
   <p>With the heatmap, we can see that there are two clear clusterings! This indicates that the users we investigated are highly polarized.</p>
   <hr>
 
   <!-- clusterings based on network -->
   <h3>Network Analysis</h3>
   <p>We also created a network of twitter users in the dataset with NetworkX, used the modularity method to separate possible communities, and plotted it using Gephi.</p>
-  <img src="{{url_for('static', filename='Network_Visualization.png')}}">
+  <center><img src="{{url_for('static', filename='Network_Visualization.png')}}" width = "500" height = "500"></center>
   <p>It's actually quite similar to the clustering we created using polarity scores!</p>
   <p>Takeaway: there's a strong correlation between the Twitter social network structures and derived polarity scores!</p>
   <hr>

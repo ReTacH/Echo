@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}Method - {% endblock %}
+{% block content %}
+  <!-- explain what echo chamber is -->
+  <h2>How to quantify the presence of an echo chamber? </h2>
+  <p> Here, building upon the models of polarity by Garimella et al. [1], we investigate the formation of echo chamber in Twitter. In particular, we requested the authors of [1] for the raw dataset on the topic of Obamacare and produced our own polarity measurements, production scores and consumption scores, for the Twitter's users with the help of modules in Python.</p>
+  <p>Content is central in measuring echo chamber effects. In a setting where opinions are polarized between two perspectives – in our
+    case “<span style="font-style: italic">liberal</span>” and “<span style="font-style: italic">conservative</span>” – we say that an echo chamber exists to the degree that users consume content that agrees with their
+    expressed point of view. To make this definition actionable and quantify the echo chamber effect, we need to model the political
+    leaning of content <span style="font-style: italic">produced</span> and <span style="font-style: italic">consumed</span> by users. </p>
+
+  <center><img src="{{url_for('static', filename='FilterBubble.png')}}" width="300" height="300"></center> 
+
+  <h3>Definitions</h3>
+  <p><span style="font-weight: bold">Domain Political Leaning: </span> a ground truth of political leaning scores of various news organizations with presence on social media obtained from Bakshy et al. [2]. A value close to 1 (0) indicates that the domain has a conservative (liberal) bent in their coverage.
+  <p><span style="font-weight: bold">Production polarity: </span> for each user in the dataset, we associate the polarity score of each tweet with the political leaning score of the news organization for which the tweet links to. The production polarity of the user is defined to be the average polarity scores of all the tweets that user posted. </p>
+  <p><span style="font-weight: bold">Consumption polarity: </span> similarly to production polarity, we define consumption polarity based on the set of tweets that a user receives on their feed from users they follow. We focus on tweets that contain a link to a news article from a domain with known political leaning. </p>
+
+  <h3>Notes on implementations</h3>
+  <p> Here, our main goal is to derive the effective production polarities and consumption polarities for the tweet users. However, the raw datasets we use contain 39 millions tweets data, each with 12 attributes. To reduce to computable data size for a quarter-long project, we focus our analysis to the users which Garimella et al. has complete polarity score calculations, so that we could compare our own scores with the original findings. In this sense, the filtered data reduced to roughly 700k tweets, which is pretty managable. </p>
+
+  <hr>
+  <p class="citation">[1] Kiran Garimella, Gianmarco De Francisci Morales, Aristides Gionis, and Michael Mathioudakis. 2018. Political Discourse on Social Media: Echo Chambers, Gatekeepers, and the Price of Bipartisanship. <span style="font-style: italic">In WWW 2018: The 2018 Web Conference, April 23–27, 2018, Lyon, France. </span>ACM, New York, NY, USA, 10 pages. https://doi.org/10.1145/3178876.3186139</p>
+  <p class="citation">[2] Eytan Bakshy, Solomon Messing, and Lada A Adamic. 2015. Exposure to ideologcally diverse news and opinion on Facebook. <span style="font-style: italic">Science</span> 348, 6239 (2015), 1130–1132.</p>
+{% endblock %}
