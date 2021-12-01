@@ -2,29 +2,29 @@
 {% extends 'base.html' %}
 {% block title %}More - {% endblock %}
 {% block content %}
-  <!-- clusterings based on polarity scores -->
-
-  <h2>Here is what we've found out about Echo Chamber in Twitter: </h2>
-
-  <h3>Current Findings</h3>
-  <p>According to the research <span style="font-style: italic">Political Discourse on Social Media: Echo Chambers, Gatekeepers, and the Price of Bipartisanship.</span>, political echo chambers exist. In particular, the distribution of production and consumption polarities of users is clearly bi-modal, and the production and consumption polarities are highly correlated.[1]</p>
-  <p></p>
-  <h3>Agglomerative Clustering</h3>
+  <h2>Here is what we've found about the Echo chamber in Twitter: </h2>
+  <p>After we've finished data exploratory and data cleaning of the huge dataset, with the help of database constructing using sqlite3, we finally obtained the <span style="font-weight: bold">production polarity </span> and <span style="font-weight: bold">consumption polarity </span> discussed in <a href="{{ url_for('method') }}">Method.</a></p>
+  <p>A natural analysis for the correlation between the production polarity and consumption polarity is to plot the two quantities on the axes of a 2-dimensional figure. In addition, we consider unsupervised clustering methods to see the trends of the data.</p>
+  <hr>
+  <h3>Clustering</h3>
+  <p>Here, while we've implemented multiple clustering methods from sklearn modules (such as K-means), we found that agglomerative clustering and spectral clustering methods provide pretty close observations with those we expected from an echo chamber.</p>
+  <p><span style="font-weight: bold">Agglomerative Clustering: </span> this is a method of cluster analysis which seeks to build a hierarchy of clusters; in particular, each observation starts in its own cluster, and pairs of clusters are merged as one moves up the hierarchy. </p>
+  <p><span style="font-weight: bold">Spectral Clustering: </span> this is a method cluster analysis which based on the information from the eigenvalues (spectrum) of special matrices (Laplacian) built from the graph or the data set. </p>
   <center>{% include 'agglomerative.html' %}</center>
-  <h3>Spectral Clustering</h3>
   <center>{% include 'spectral.html' %}</center>
+  <hr>
   <h3>Heatmap</h3>
+  <p>Fortunately, the modules from <span style="font-style: italic"> Plotly </span> enable us to create a nice heatmap from the consumption polarity and production polarity - best visualization of the echo chamber! <p>
+  <p>From the heatmap, we can now see that there are two dense clusterings! this indicates that the users we investigated are highly polarized. In addition, by observing the histogram and violin plot, we see that the distribution of production and consumption polarities of users is clearly bi-modal, and the production and consumption polarities are highly correlated.</p>
   <center>{% include 'heatmap.html' %}</center>
-  <p>With the heatmap, we can see that there are two clear clusterings! This indicates that the users we investigated are highly polarized.</p>
   <hr>
-
-  <!-- clusterings based on network -->
   <h3>Network Analysis</h3>
-  <p>We also created a network of twitter users in the dataset with NetworkX, used the modularity method to separate possible communities, and plotted it using Gephi.</p>
-  <center><img src="{{url_for('static', filename='Network_Visualization.png')}}" width = "500" height = "500"></center>
-  <p>It's actually quite similar to the clustering we created using polarity scores!</p>
-  <p>Takeaway: there's a strong correlation between the Twitter social network structures and derived polarity scores!</p>
-  <hr>
-  <p class="citation">[1] Kiran Garimella, Gianmarco De Francisci Morales, Aristides Gionis, and Michael Mathioudakis. 2018. Political Discourse on Social Media: Echo Chambers, Gatekeepers, and the Price of Bipartisanship. <span style="font-style: italic">In WWW 2018: The 2018 Web Conference, April 23–27, 2018, Lyon, France. </span>ACM, New York, NY, USA, 10 pages. https://doi.org/10.1145/3178876.3186139</p>
+  <p>Since the dataset we received also contains the information about Twitter following data of the users, we created a directed network by joining an edge corresponding to the follower relations. Here, we set the positional layout for the nodes of the network with the consumption polarity and production polarity of the users we had previously calculated. </p>
+  <p>Here, we build the network using the module <span style="font-style: italic"> NetworkX </span>. Since there're nearly millions edges in the network, we move to an external program <span style="font-style: italic"> Gephi </span> to visualize the complex network structures.</p>
+  <p>Next, we implement the modularity method to detect communities in the network. Surprisingly, nearly all nodes (98%) are included in one of the three major clusters shown in orange, green, and pink below. In addition, the size of nodes are also chosen in correlation with the eigenvector centrality of the nodes. </p>
 
+  <center><img src="{{url_for('static', filename='Network_Visualization.png')}}" width = "500" height = "500"></center>
+  <p>We see that there's a strong correlation between the community we detected using network analysis and the community we obtained by calculating the polarity scores!! This means that there's a tendency for people to follow those with the same political leaning as well. </p>
+  <p>Additionally, we see that people with extreme conservative political leaning usually have high eigenvector centrality measurement; this might be a future research direction whether we could classify the echo chamber entirely based on the eigenvector centrality of the corresponding follower network. </p>
+  <hr>
 {% endblock %}

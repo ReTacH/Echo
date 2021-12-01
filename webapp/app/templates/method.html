@@ -10,12 +10,12 @@
     leaning of content <span style="font-style: italic">produced</span> and <span style="font-style: italic">consumed</span> by users. </p>
 
   <center><img src="{{url_for('static', filename='FilterBubble.png')}}" width="300" height="300"></center> 
-
+  
   <h3>Definitions</h3>
   <p><span style="font-weight: bold">Domain Political Leaning: </span> a ground truth of political leaning scores of various news organizations with presence on social media obtained from Bakshy et al. [2]. A value close to 1 (0) indicates that the domain has a conservative (liberal) bent in their coverage.
   <p><span style="font-weight: bold">Production polarity: </span> for each user in the dataset, we associate the polarity score of each tweet with the political leaning score of the news organization for which the tweet links to. The production polarity of the user is defined to be the average polarity scores of all the tweets that user posted. </p>
   <p><span style="font-weight: bold">Consumption polarity: </span> similarly to production polarity, we define consumption polarity based on the set of tweets that a user receives on their feed from users they follow. We focus on tweets that contain a link to a news article from a domain with known political leaning. </p>
-
+  <hr>
   <h3>Notes on implementations</h3>
   <p> Here, our main goal is to derive the effective production polarities and consumption polarities for the tweet users. However, the raw datasets we use contain 39 millions tweets data, each with 12 attributes. To reduce to computable data size for a quarter-long project, we focus our analysis to the users which Garimella et al. has complete polarity score calculations, so that we could compare our own scores with the original findings. In this sense, the filtered data reduced to roughly 700k tweets, which is pretty managable. </p>
 
