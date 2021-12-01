@@ -56,6 +56,7 @@ body {
     color: #348efe;
 }
 #home-yes:hover, #home-yes:focus {
+    transition: 0.2s;
     background-color: #e1f1ff;
 }
 #home-yes:hover .tooltiptext {
@@ -70,6 +71,7 @@ body {
   color: white;
 }
 #home-no:hover, #home-no:focus {
+    transition: 0.2s;
     background-color: #269aff;
 }
 #home-no:hover .tooltiptext {

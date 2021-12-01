@@ -39,6 +39,18 @@ a {
 
 a:hover {
   color: white;
+  transition: 0.1s;
+}
+
+#method {
+  text-decoration: underline;
+  font-style: bold;
+  color: #1e5596;
+}
+
+#method:hover {
+  color: #729fd4;
+  transition: 0.1s;
 }
 
 
