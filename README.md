@@ -25,7 +25,7 @@ We implemented a webapp with flask to
 
 All of our research results are posted on the webapp. To access it, you can do the following: 
 
-1. Have flask installed on your computer; if you haven't done so, see ![installation manual](https://flask.palletsprojects.com/en/2.0.x/installation/)
+1. Have flask installed on your computer; if you haven't done so, see [installation manual](https://flask.palletsprojects.com/en/2.0.x/installation/)
 2. Save the `webapp` folder in your local directory.
 3. In your commandline tool, navigate to the `webapp` folder (inside of it).
 4. Type `flask run` to run flask on the webapp.
